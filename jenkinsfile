@@ -8,7 +8,7 @@ pipeline{
         }
         stage("Creting container"){
             steps{
-                sh 'docker run -d -p 9090:9090 springboot:v2.1'
+                sh 'docker run -d -p 8080:8080 springboot:v2.1'
             }
         }
     }
@@ -17,7 +17,7 @@ pipeline{
             emailext(
                 to :'rakesh.cs779@gmail.com, siddardha070@gmail.com ',
                 subject : 'About Springboot Project ',
-                body : 'http://192.168.255.254:9090'
+                body : 'http://192.168.255.254:8080'
             )
         }
     }
